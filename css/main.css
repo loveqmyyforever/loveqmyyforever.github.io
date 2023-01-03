@@ -1603,6 +1603,7 @@ pre code {
   color: #f00;
   display: inline-block;
   margin: 0 5px;
+  animation: icon-animate 1.33s ease-in-out infinite;
 }
 .busuanzi-count #busuanzi_container_site_uv {
   display: none;
@@ -2477,7 +2478,7 @@ mark.search-keyword {
 .main-inner {
   border-radius: initial;
   box-sizing: border-box;
-  width: calc(100% - 252px);
+  width: calc(100% - 312px);
 }
 @media (max-width: 991px) {
   .main-inner {
@@ -2486,7 +2487,7 @@ mark.search-keyword {
   }
 }
 .footer-inner {
-  padding-left: 252px;
+  padding-left: 312px;
 }
 @media (max-width: 991px) {
   .footer-inner {
@@ -2496,7 +2497,7 @@ mark.search-keyword {
   }
 }
 .column {
-  width: 240px;
+  width: 300px;
 }
 @media (max-width: 991px) {
   .column {
