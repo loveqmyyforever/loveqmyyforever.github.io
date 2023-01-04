@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.qmyy.xyz","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.14.1","exturl":false,"sidebar":{"position":"right","width":400,"display":"hide","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"livere","storage":true,"lazyload":false,"nav":null,"activeClass":"livere"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="一、前期准备1.1在自己电脑上创建一个文件夹，用来存放搭建博客所需要的工具和文件 比如我在D盘创建了一个名字叫Blog的文件夹。   然后进入Blog文件夹，再创建两个文件夹。一个是Tools，用来存放待会搭建博客要用到的工具；另一个是用来存放博客的各种配置文件和作品，名字随便取。我自己就取了一个跟我GitHub仓库一样的名字。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="我的博客搭建">
+<meta property="og:url" content="https://www.qmyy.xyz/2023/01/04/wo-de-bo-ke-da-jian/index.html">
+<meta property="og:site_name" content="青木鱼鱼的博客">
+<meta property="og:description" content="一、前期准备1.1在自己电脑上创建一个文件夹，用来存放搭建博客所需要的工具和文件 比如我在D盘创建了一个名字叫Blog的文件夹。   然后进入Blog文件夹，再创建两个文件夹。一个是Tools，用来存放待会搭建博客要用到的工具；另一个是用来存放博客的各种配置文件和作品，名字随便取。我自己就取了一个跟我GitHub仓库一样的名字。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.qmyy.xyz/images/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/blog1.png">
+<meta property="og:image" content="https://www.qmyy.xyz/images/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/blog2.png">
+<meta property="og:image" content="https://www.qmyy.xyz/images/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/tool.png">
+<meta property="og:image" content="https://www.qmyy.xyz/images/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E7%BD%AE.png">
+<meta property="og:image" content="https://www.qmyy.xyz/images/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F.png">
+<meta property="og:image" content="https://www.qmyy.xyz/images/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E7%BC%96%E8%BE%91%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F.png">
+<meta property="og:image" content="https://www.qmyy.xyz/images/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E6%97%A0%E6%A0%87%E9%A2%98.png">
+<meta property="og:image" content="https://www.qmyy.xyz/images/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/20201109215618150.png">
+<meta property="og:image" content="https://www.qmyy.xyz/images/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/20201109215908851-167283383440317.png">
+<meta property="og:image" content="https://www.qmyy.xyz/images/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/20201110094937609.png">
+<meta property="og:image" content="https://www.qmyy.xyz/images/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/20201110095650122.png">
+<meta property="og:image" content="https://www.qmyy.xyz/images/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/20201110100254734.png">
+<meta property="og:image" content="https://www.qmyy.xyz/images/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/1.png">
+<meta property="og:image" content="https://www.qmyy.xyz/images/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/v2-9125065afd24332d7cd84feb6a350730_r.jpg">
+<meta property="og:image" content="https://www.qmyy.xyz/images/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/P4(V%25DEWIVXO$F$734)GO$V.png">
+<meta property="og:image" content="https://www.qmyy.xyz/images/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230104224524.png">
+<meta property="og:image" content="https://www.qmyy.xyz/images/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230104225139.png">
+<meta property="og:image" content="https://www.qmyy.xyz/images/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/rwr.png">
+<meta property="og:image" content="https://www.qmyy.xyz/images/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/fgdf.png">
+<meta property="article:published_time" content="2023-01-04T09:47:07.000Z">
+<meta property="article:modified_time" content="2023-01-04T15:06:30.107Z">
+<meta property="article:author" content="青木鱼鱼">
+<meta property="article:tag" content="blog">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.qmyy.xyz/images/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/blog1.png">
+
+
+<link rel="canonical" href="https://www.qmyy.xyz/2023/01/04/wo-de-bo-ke-da-jian/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.qmyy.xyz/2023/01/04/wo-de-bo-ke-da-jian/","path":"2023/01/04/wo-de-bo-ke-da-jian/","title":"我的博客搭建"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>我的博客搭建 | 青木鱼鱼的博客</title>
+  
+
+
+
+
+
+
+
+
+
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/clicklove.js"></script>
+  
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">青木鱼鱼的博客</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E5%89%8D%E6%9C%9F%E5%87%86%E5%A4%87"><span class="nav-text">一、前期准备</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1%E5%9C%A8%E8%87%AA%E5%B7%B1%E7%94%B5%E8%84%91%E4%B8%8A%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E6%96%87%E4%BB%B6%E5%A4%B9%EF%BC%8C%E7%94%A8%E6%9D%A5%E5%AD%98%E6%94%BE%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%89%80%E9%9C%80%E8%A6%81%E7%9A%84%E5%B7%A5%E5%85%B7%E5%92%8C%E6%96%87%E4%BB%B6"><span class="nav-text">1.1在自己电脑上创建一个文件夹，用来存放搭建博客所需要的工具和文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2%E4%B8%8B%E8%BD%BD%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%89%80%E9%9C%80%E8%A6%81%E7%9A%84%E5%B7%A5%E5%85%B7Git%E5%92%8Cnode-js"><span class="nav-text">1.2下载搭建博客所需要的工具Git和node.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3%E6%8A%8ANode-js%E5%92%8CGit%E5%8A%A0%E5%85%A5%E7%B3%BB%E7%BB%9F%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E4%B8%AD"><span class="nav-text">1.3把Node.js和Git加入系统环境变量中</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E6%B3%A8%E5%86%8CGitHub%E8%B4%A6%E5%8F%B7%EF%BC%8C%E5%B9%B6%E8%BF%9B%E8%A1%8CGit%E9%85%8D%E7%BD%AE"><span class="nav-text">二、注册GitHub账号，并进行Git配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1%E6%B3%A8%E5%86%8C%E8%B4%A6%E5%8F%B7%E4%B8%8D%E7%94%A8%E6%88%91%E8%AF%B4%E4%BA%86%E5%90%A7%EF%BC%8C%E9%83%BD%E8%BF%99%E4%B9%88%E5%A4%A7%E7%9A%84%E4%BA%BA%E4%BA%86"><span class="nav-text">2.1注册账号不用我说了吧，都这么大的人了~</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2%E9%85%8D%E7%BD%AEGit-%E7%94%A8%E6%88%B7%E5%90%8D%E5%92%8C%E9%82%AE%E7%AE%B1"><span class="nav-text">2.2配置Git 用户名和邮箱</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3%E9%85%8D%E7%BD%AEGitHub"><span class="nav-text">2.3配置GitHub</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4%E9%85%8D%E7%BD%AESSH-%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95"><span class="nav-text">2.4配置SSH 免密登录</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E6%9C%AC%E5%9C%B0%E5%AE%89%E8%A3%85-Hexo-%E5%8D%9A%E5%AE%A2%E6%A1%86%E6%9E%B6%E5%B9%B6%E6%8E%A8%E9%80%81%E5%88%B0-GitHub"><span class="nav-text">三、本地安装 Hexo 博客框架并推送到 GitHub</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-%E5%8D%9A%E5%AE%A2%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-text">3.1 博客初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-%E5%B0%86%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0-github-%E4%B8%AA%E4%BA%BA%E4%B8%BB%E9%A1%B5%E4%B8%8A"><span class="nav-text">3.2 将博客部署到 github 个人主页上</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E5%A6%82%E4%BD%95%E8%A7%A3%E6%9E%90%E8%87%AA%E5%B7%B1%E7%9A%84%E5%9F%9F%E5%90%8D%E5%88%B0%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A1%B5"><span class="nav-text">四、如何解析自己的域名到博客主页</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1%E6%B3%A8%E5%86%8C%E5%9F%9F%E5%90%8D"><span class="nav-text">4.1注册域名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2%E5%B0%86%E8%87%AA%E5%B7%B1%E7%9A%84%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90%E5%88%B0github-page"><span class="nav-text">4.2将自己的域名解析到github page</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="青木鱼鱼"
+      src="/images/touxiang.jpg">
+  <p class="site-author-name" itemprop="name">青木鱼鱼</p>
+  <div class="site-description" itemprop="description">互相欣赏 各自努力</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/loveqmyyforever" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;loveqmyyforever" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:1602425035@qq.com" title="E-Mail → mailto:1602425035@qq.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+
+
+
+
+
+
+
+      <div>
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=450 src="//music.163.com/outchain/player?type=0&id=8015114191&auto=0&height=430"></iframe>
+      </div>
+    </div>
+
+    
+     
+
+
+
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.qmyy.xyz/2023/01/04/wo-de-bo-ke-da-jian/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/touxiang.jpg">
+      <meta itemprop="name" content="青木鱼鱼">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="青木鱼鱼的博客">
+      <meta itemprop="description" content="互相欣赏 各自努力">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="我的博客搭建 | 青木鱼鱼的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          我的博客搭建
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-01-04 17:47:07 / 修改时间：23:06:30" itemprop="dateCreated datePublished" datetime="2023-01-04T17:47:07+08:00">2023-01-04</time>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="一、前期准备"><a href="#一、前期准备" class="headerlink" title="一、前期准备"></a>一、前期准备</h2><h3 id="1-1在自己电脑上创建一个文件夹，用来存放搭建博客所需要的工具和文件"><a href="#1-1在自己电脑上创建一个文件夹，用来存放搭建博客所需要的工具和文件" class="headerlink" title="1.1在自己电脑上创建一个文件夹，用来存放搭建博客所需要的工具和文件"></a>1.1在自己电脑上创建一个文件夹，用来存放搭建博客所需要的工具和文件</h3><ul>
+<li><p>比如我在D盘创建了一个名字叫Blog的文件夹。</p>
+<img src="/images/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/blog1.png" style="zoom:;" />
+</li>
+<li><p>然后进入Blog文件夹，再创建两个文件夹。一个是Tools，用来存放待会搭建博客要用到的工具；另一个是用来存放博客的各种配置文件和作品，名字随便取。我自己就取了一个跟我GitHub仓库一样的名字。</p>
+<p><img src="/images/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/blog2.png"></p>
+</li>
+</ul>
+<span id="more"></span>
+
+<h3 id="1-2下载搭建博客所需要的工具Git和node-js"><a href="#1-2下载搭建博客所需要的工具Git和node-js" class="headerlink" title="1.2下载搭建博客所需要的工具Git和node.js"></a>1.2下载搭建博客所需要的工具<a target="_blank" rel="noopener" href="https://git-scm.com/download">Git</a>和<a target="_blank" rel="noopener" href="https://nodejs.org/en/download/">node.js</a></h3><ul>
+<li><p>因为我自己创建了专门存放工具的文件夹，所以我放在Tools里面</p>
+<p><img src="/images/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/tool.png"></p>
+</li>
+</ul>
+<h3 id="1-3把Node-js和Git加入系统环境变量中"><a href="#1-3把Node-js和Git加入系统环境变量中" class="headerlink" title="1.3把Node.js和Git加入系统环境变量中"></a>1.3把Node.js和Git加入系统环境变量中</h3><ul>
+<li><p>在命令提示符中输入SystemPropertiesAdvanced.exe打开系统属性，打开环境变量。</p>
+<img src="/images/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E7%BD%AE.png" alt="" style="zoom: 67%;" />
+</li>
+<li><p>先选中Path，再点击编辑。</p>
+<img src="/images/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F.png" alt="" style="zoom:67%;" />
+</li>
+<li><p>新建一个变量，然后把Git和Node.js环境加进去。</p>
+<img src="/images/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E7%BC%96%E8%BE%91%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F.png" alt="" style="zoom:67%;" />
+</li>
+<li><p>完成之后，我们打开命令提示符（win+r），分别输入：</p>
+<pre class="line-numbers language-none"><code class="language-none">node -v
+git --version<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><strong>如果下面有版本号跳出来，恭喜你环境变量添加成功！</strong></p>
+</li>
+</ul>
+<h2 id="二、注册GitHub账号，并进行Git配置"><a href="#二、注册GitHub账号，并进行Git配置" class="headerlink" title="二、注册GitHub账号，并进行Git配置"></a>二、注册GitHub账号，并进行Git配置</h2><h3 id="2-1注册账号不用我说了吧，都这么大的人了"><a href="#2-1注册账号不用我说了吧，都这么大的人了" class="headerlink" title="2.1注册账号不用我说了吧，都这么大的人了~"></a>2.1注册账号不用我说了吧，都这么大的人了~</h3><h3 id="2-2配置Git-用户名和邮箱"><a href="#2-2配置Git-用户名和邮箱" class="headerlink" title="2.2配置Git 用户名和邮箱"></a>2.2配置Git 用户名和邮箱</h3><ul>
+<li><p>在桌面点击鼠标右键，点击 Git Bash Here，然后分别输入下面的两个命令，并回车：</p>
+<p><img src="/images/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E6%97%A0%E6%A0%87%E9%A2%98.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">git config --global user.name &quot;此处填写你注册时的用户名&quot;
+git config --global user.email &quot;此处填写你注册时的邮箱&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+</li>
+<li><p>然后在<code>C:/Users/[username</code>找到<code>.gitconfig</code>文件<strong>（未找到的话，请开启显示隐藏文件的功能）</strong>，打开后可以看到一下内容：</p>
+<pre class="line-numbers language-none"><code class="language-none">[user]
+	name &#x3D; xxx
+	email &#x3D; xxx@xxx.com<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<h3 id="2-3配置GitHub"><a href="#2-3配置GitHub" class="headerlink" title="2.3配置GitHub"></a>2.3配置GitHub</h3><ul>
+<li><p>新建一个名为你的用户名.github.io的仓库</p>
+<p>比如说，如果你的github用户名是<code>test</code>，那么你就新建<code>test.github.io</code>的仓库（必须是你的用户名，其它名称无效），将来你的网站访问地址就是 <code>http://test.github.io</code>了.</p>
+</li>
+<li><p>具体操作如图：</p>
+<p><img src="/images/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/20201109215618150.png"></p>
+<p><img src="/images/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/20201109215908851-167283383440317.png"></p>
+<p><img src="/images/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/20201110094937609.png"></p>
+<p><img src="/images/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/20201110095650122.png"></p>
+<p><img src="/images/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/20201110100254734.png"></p>
+</li>
+</ul>
+<h3 id="2-4配置SSH-免密登录"><a href="#2-4配置SSH-免密登录" class="headerlink" title="2.4配置SSH 免密登录"></a>2.4配置SSH 免密登录</h3><ul>
+<li><p>为什么要配置这个呢？因为你提交代码肯定要拥有你的github权限才可以，但是直接使用用户名和密码太不安全了，所以我们使用ssh key来解决本地和服务器的连接问题。</p>
+<p><strong>简单的来说就是给予你当前电脑访问你GitHub 仓库的权限</strong></p>
+</li>
+<li><p>回到桌面，右键桌面的<code>git bash here</code>，创建一个ssh密钥</p>
+<pre class="line-numbers language-none"><code class="language-none">cd ~&#x2F;.ssh
+ssh-keygen -t rsa -C &quot;你自己的邮箱&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>然后enter三连</p>
+<p>它会在<code>C:\Users\用户名\.ssh</code>生成下面两个文件<strong>（要勾选显示“隐藏的项目”）</strong>：</p>
+<p><img src="/images/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/1.png"></p>
+<p>而我们要的是下面的<code>id_rsa.pub</code>文件，<strong>这里面有我们的公开的ssh码，也是给管理员这个ssh，让它来添加</strong></p>
+</li>
+<li><p>登陆 <strong>GitHub <strong>，进入 <strong>Settings</strong> 页面，选择左边栏的</strong>SSH and GPG keys</strong>，点击 <strong>New SSH key</strong>。</p>
+<p>Title 随便取个名字，粘贴复制的 id_rsa.pub 内容到 Key 中，点击 Add SSH key 完成添加。</p>
+<p><img src="/images/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/v2-9125065afd24332d7cd84feb6a350730_r.jpg"></p>
+<p><strong>OK，咱们搭建博客的环境搞好了，接下来可以搭建博客框架，然后写文章进行推送啦！</strong></p>
+</li>
+</ul>
+<h2 id="三、本地安装-Hexo-博客框架并推送到-GitHub"><a href="#三、本地安装-Hexo-博客框架并推送到-GitHub" class="headerlink" title="三、本地安装 Hexo 博客框架并推送到 GitHub"></a>三、本地安装 Hexo 博客框架并推送到 GitHub</h2><h3 id="3-1-博客初始化"><a href="#3-1-博客初始化" class="headerlink" title="3.1 博客初始化"></a>3.1 博客初始化</h3><ul>
+<li><p>在命令行安装cnpm</p>
+<pre class="line-numbers language-none"><code class="language-none">npm install -g cnpm --registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>安装后验证：<code>cnpm -v</code> 出现版本号说明安装成功</p>
+</li>
+<li><p>命令行安装hexo （安装博客框架）</p>
+<pre class="line-numbers language-none"><code class="language-none">cnpm install -g hexo-cli<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>安装后验证：<code>hexo -v</code> 出现版本号说明安装成功</p>
+</li>
+<li><p>接着进入存放博客的文件夹中<strong>（我的文件夹取名叫loveqmyyforever.github.io，所以我就进入我这个文件夹）</strong>，右键打开<strong>Git bash here</strong>,并依次执行以下命令:</p>
+<pre class="line-numbers language-none"><code class="language-none">hexo init #初始化命令，hexo会自动下载一些文件到这个目录，包括node_modules等
+hexo g #生成命令
+hexo s #启动服务<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>说明：</strong><code>hexo s</code> 是开启本地预览服务，打开浏览器访问 <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000</a> 即可看到内容，说明博客初始化以及成功！</p>
+<p>很多人会碰到浏览器一直在转圈但是就是加载不出来的问题，一般情况下是因为端口占用的缘故，</p>
+<p>因为4000这个端口太常见了， 只需要关闭4000端口或者重新选择端口即可</p>
+<p><strong>到此博客的初始化便完成了，此时你可以本地开启服务并访问，下一步便是推送到GitHub 上！</strong></p>
+</li>
+</ul>
+<h3 id="3-2-将博客部署到-github-个人主页上"><a href="#3-2-将博客部署到-github-个人主页上" class="headerlink" title="3.2 将博客部署到 github 个人主页上"></a>3.2 将博客部署到 github 个人主页上</h3><ul>
+<li><p>在<strong>loveqmyyforever.github.io</strong>文件夹就中安装<code>hexo-deployer-git</code> 插件，同样的，右击<strong>Git bash here</strong>。</p>
+<pre class="line-numbers language-none"><code class="language-none">npm install hexo-deployer-git --save #必须安装，否则执行hexo d 的话会报错<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>安装好之后，就可以看到有一个叫做<code> _config.yml</code>的文件，打开它，拉到底，在文件末尾修改配置信息：</p>
+<pre class="line-numbers language-none"><code class="language-none">deploy:
+  type: git
+  repo: github上对应仓库的ssh链接 或 github上对应仓库的ssh链接  
+  branch: main<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>注意 <code>:</code> 后面一定要有空格！！！</strong></p>
+</li>
+<li><p>最后，在<strong>loveqmyyforever.github.io</strong>文件夹下将本地blog推送到 github仓库</p>
+<pre class="line-numbers language-none"><code class="language-none">hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>推送成功后, 在浏览器中输入对应域名, 即可访问 <code>https://你的账户名字.github.io/</code></p>
+<p>现在，我们已经把博客搭建好了！</p>
+<p>嗷，对了，还有一些hexo框架常用的命令：</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th><strong>说明</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>hexo clean</code></td>
+<td>清除本地项目缓存</td>
+</tr>
+<tr>
+<td><code>hexo g</code></td>
+<td>重新生成</td>
+</tr>
+<tr>
+<td><code>Hexo d</code></td>
+<td>推送到github</td>
+</tr>
+<tr>
+<td><code>Hexo s</code></td>
+<td>开启本地预览</td>
+</tr>
+</tbody></table>
+<p>当然，命令也可以连起来用，就像这样：<code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</code>。</p>
+</li>
+</ul>
+<h2 id="四、如何解析自己的域名到博客主页"><a href="#四、如何解析自己的域名到博客主页" class="headerlink" title="四、如何解析自己的域名到博客主页"></a>四、如何解析自己的域名到博客主页</h2><h3 id="4-1注册域名"><a href="#4-1注册域名" class="headerlink" title="4.1注册域名"></a>4.1注册域名</h3><p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/act/pro/domain-sales?fromSource=gwzcw.2043811.2043811.2043811&utm_id=gwzcw.2043811.2043811.2043811&utm_medium=cpc">腾讯云看这里</a></p>
+<p><a target="_blank" rel="noopener" href="https://wanwang.aliyun.com/?utm_content=se_1003106260">阿里云看这里</a></p>
+<h3 id="4-2将自己的域名解析到github-page"><a href="#4-2将自己的域名解析到github-page" class="headerlink" title="4.2将自己的域名解析到github page"></a>4.2将自己的域名解析到github page</h3><ul>
+<li><p>添加这两个记录</p>
+<p><img src="/images/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/P4(V%25DEWIVXO$F$734)GO$V.png"></p>
+</li>
+<li><p>在GitHub仓库中，将自己的域名写进去</p>
+<p><img src="/images/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230104224524.png"></p>
+<p>这样子，我们的域名就能成功和自己的博客绑定一起了。</p>
+<p>但是吧，我发现我每次把文章推送上去后，GitHub仓库里的域名又给我清空了，可恶！</p>
+<p>解决办法：</p>
+<ul>
+<li><p>找到站点配置文件的<code>source</code>文件夹，点进去。</p>
+<p><img src="/images/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/QQ%E5%9B%BE%E7%89%8720230104225139.png"></p>
+</li>
+<li><p>新建一个<strong>文本文档</strong>，在里面输入<strong>自己注册的域名。</strong></p>
+<p><img src="/images/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/rwr.png"></p>
+</li>
+<li><p>保存的名字是<code>CNAME</code>，不要后缀名！</p>
+<p><img src="/images/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/fgdf.png"></p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>这样，我们就可以通过自己的域名来访问自己的博客了!</strong></p>
+
+    </div>
+
+    
+    
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">
+            ----------------好像木有了喔----------------
+        </div>
+    
+</div>
+      
+    </div>
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>Buy me a coffee</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.png" alt="青木鱼鱼 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/alipay.jpg" alt="青木鱼鱼 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>青木鱼鱼
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://www.qmyy.xyz/2023/01/04/wo-de-bo-ke-da-jian/" title="我的博客搭建">https://www.qmyy.xyz/2023/01/04/wo-de-bo-ke-da-jian/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/blog/" rel="tag"><i class="fa fa-tag"></i> blog</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/01/02/hello-world/" rel="prev" title="Hello World">
+                  <i class="fa fa-chevron-left"></i> Hello World
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="lv-container" data-id="city" data-uid="MTAyMC81Nzg2NS8zNDMyOA=="></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">青木鱼鱼</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div><script color="120,60,125" opacity="0.8" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/loveqmyyforever" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<script src="/js/third-party/comments/livere.js"></script>
+
+</body>
+</html>
