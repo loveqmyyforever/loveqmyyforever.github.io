@@ -22,27 +22,30 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"www.qmyy.xyz","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.14.1","exturl":false,"sidebar":{"position":"right","width":400,"display":"hide","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"livere","storage":true,"lazyload":false,"nav":null,"activeClass":"livere"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+    <meta name="description" content="一、想法大一的时候学习了网页设计制作这门课，于是就想着，我辛辛苦苦做的的网页只能在自己的电脑看，要是有一天自己出门在外，而且电脑刚好没有放在身边，那我怎么看呢？ 直到放假回家，我瞅了一眼家里的路由器。 嘿嘿，这不就来活了嘛！ 二、了解家里上网方式  为了上网，肯定要接根线（光纤）到你家，不然你天天用手机流量也吃不消。  但是接上线了还不行，还得让运营商（联通、电信、移动）给你开通网络，网络就通过这">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://www.qmyy.xyz/2023/01/02/hello-world/index.html">
+<meta property="og:title" content="用公网IP访问电脑虚拟机搭建的web（一）">
+<meta property="og:url" content="https://www.qmyy.xyz/2023/01/12/yong-gong-wang-ip-fang-wen-dian-nao-xu-ni-ji-da-jian-de-web-yi/index.html">
 <meta property="og:site_name" content="青木鱼鱼的博客">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+<meta property="og:description" content="一、想法大一的时候学习了网页设计制作这门课，于是就想着，我辛辛苦苦做的的网页只能在自己的电脑看，要是有一天自己出门在外，而且电脑刚好没有放在身边，那我怎么看呢？ 直到放假回家，我瞅了一眼家里的路由器。 嘿嘿，这不就来活了嘛！ 二、了解家里上网方式  为了上网，肯定要接根线（光纤）到你家，不然你天天用手机流量也吃不消。  但是接上线了还不行，还得让运营商（联通、电信、移动）给你开通网络，网络就通过这">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-01-02T13:02:58.601Z">
-<meta property="article:modified_time" content="2023-01-03T09:38:10.263Z">
+<meta property="og:image" content="https://www.qmyy.xyz/images/%E7%94%A8%E5%85%AC%E7%BD%91IP%E8%AE%BF%E9%97%AE%E7%94%B5%E8%84%91%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%90%AD%E5%BB%BA%E7%9A%84web%EF%BC%88%E4%B8%80%EF%BC%89/%E4%B8%8A%E7%BD%91%E6%96%B9%E5%BC%8F.png">
+<meta property="article:published_time" content="2023-01-12T11:00:15.000Z">
+<meta property="article:modified_time" content="2023-01-12T17:09:03.356Z">
 <meta property="article:author" content="青木鱼鱼">
+<meta property="article:tag" content="web">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.qmyy.xyz/images/%E7%94%A8%E5%85%AC%E7%BD%91IP%E8%AE%BF%E9%97%AE%E7%94%B5%E8%84%91%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%90%AD%E5%BB%BA%E7%9A%84web%EF%BC%88%E4%B8%80%EF%BC%89/%E4%B8%8A%E7%BD%91%E6%96%B9%E5%BC%8F.png">
 
 
-<link rel="canonical" href="https://www.qmyy.xyz/2023/01/02/hello-world/">
+<link rel="canonical" href="https://www.qmyy.xyz/2023/01/12/yong-gong-wang-ip-fang-wen-dian-nao-xu-ni-ji-da-jian-de-web-yi/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.qmyy.xyz/2023/01/02/hello-world/","path":"2023/01/02/hello-world/","title":"Hello World"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.qmyy.xyz/2023/01/12/yong-gong-wang-ip-fang-wen-dian-nao-xu-ni-ji-da-jian-de-web-yi/","path":"2023/01/12/yong-gong-wang-ip-fang-wen-dian-nao-xu-ni-ji-da-jian-de-web-yi/","title":"用公网IP访问电脑虚拟机搭建的web（一）"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Hello World | 青木鱼鱼的博客</title>
+<title>用公网IP访问电脑虚拟机搭建的web（一） | 青木鱼鱼的博客</title>
   
 
 
@@ -145,7 +148,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E6%83%B3%E6%B3%95"><span class="nav-text">一、想法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E4%BA%86%E8%A7%A3%E5%AE%B6%E9%87%8C%E4%B8%8A%E7%BD%91%E6%96%B9%E5%BC%8F"><span class="nav-text">二、了解家里上网方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E8%AE%A1%E5%88%92"><span class="nav-text">三、计划</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="nav-text">四、注意事项</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -160,13 +163,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -215,7 +218,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://www.qmyy.xyz/2023/01/02/hello-world/">
+    <link itemprop="mainEntityOfPage" href="https://www.qmyy.xyz/2023/01/12/yong-gong-wang-ip-fang-wen-dian-nao-xu-ni-ji-da-jian-de-web-yi/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/touxiang.jpg">
@@ -228,12 +231,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Hello World | 青木鱼鱼的博客">
+      <meta itemprop="name" content="用公网IP访问电脑虚拟机搭建的web（一） | 青木鱼鱼的博客">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Hello World
+          用公网IP访问电脑虚拟机搭建的web（一）
         </h1>
 
         <div class="post-meta-container">
@@ -244,14 +247,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2023-01-02 21:02:58" itemprop="dateCreated datePublished" datetime="2023-01-02T21:02:58+08:00">2023-01-02</time>
+      <time title="创建时间：2023-01-12 19:00:15" itemprop="dateCreated datePublished" datetime="2023-01-12T19:00:15+08:00">2023-01-12</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-01-03 17:38:10" itemprop="dateModified" datetime="2023-01-03T17:38:10+08:00">2023-01-03</time>
+      <time title="修改时间：2023-01-13 01:09:03" itemprop="dateModified" datetime="2023-01-13T01:09:03+08:00">2023-01-13</time>
     </span>
 
   
@@ -271,21 +274,72 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<span id="more"></span>
-
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+        <h2 id="一、想法"><a href="#一、想法" class="headerlink" title="一、想法"></a>一、想法</h2><p>大一的时候学习了网页设计制作这门课，于是就想着，我辛辛苦苦做的的网页只能在自己的电脑看，要是有一天自己出门在外，而且电脑刚好没有放在身边，那我怎么看呢？</p>
+<p>直到放假回家，我瞅了一眼家里的路由器。</p>
+<p>嘿嘿，这不就来活了嘛！</p>
+<h2 id="二、了解家里上网方式"><a href="#二、了解家里上网方式" class="headerlink" title="二、了解家里上网方式"></a>二、了解家里上网方式</h2><p><img src="/../../images/%E7%94%A8%E5%85%AC%E7%BD%91IP%E8%AE%BF%E9%97%AE%E7%94%B5%E8%84%91%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%90%AD%E5%BB%BA%E7%9A%84web%EF%BC%88%E4%B8%80%EF%BC%89/%E4%B8%8A%E7%BD%91%E6%96%B9%E5%BC%8F.png"></p>
+<ol>
+<li><p>为了上网，肯定要接根线（<code>光纤</code>）到你家，不然你天天用手机流量也吃不消。</p>
+</li>
+<li><p>但是接上线了还不行，还得让运营商（<code>联通</code>、<code>电信</code>、<code>移动</code>）给你开通网络，网络就通过这根线传到你家的。</p>
+</li>
+<li><p>那么给你开通的网络就是我们常说的<code>宽带</code>，我们要就要使用运营商给我们提供的<code>宽带账号和密码</code>来登录上网，这种上网方式就叫<code>拨号上网</code>。</p>
+<blockquote>
+<p><strong>拨号上网</strong>：说白了就是登录运营商给你的账号密码来上网</p>
+<blockquote>
+<p>这跟打电话一样，为了把电话打出去就要对电话号码进行拨号</p>
+<p>宽带账号跟电话号码都是一个道理</p>
+</blockquote>
+<p>这个账号密码就是宽带的账号密码</p>
+<p>宽带要去运营商买的，不然人家怎么收费和管理？</p>
+<p>PS：<strong>拨号上网</strong>是基于<code>PPPoE协议</code>的,所以也叫做<strong>PPPoE上网</strong></p>
+</blockquote>
+</li>
+<li><p>好了，现在光纤有了，宽带也有了，那我们怎么上网呢？难道把光纤插到我的手机或者电脑上嘛？当然不是。</p>
+</li>
+<li><p>我们每家每户都买了个路由器（<code>AP</code>），通过它来跟外面的网络打交道。而我们的手机、电脑等一些设备则通过无线信号（<code>WiFi</code>）或者网线来连接<code>路由器</code>。</p>
+</li>
+<li><p>那<code>光猫</code>又是怎么一回事呢：</p>
+<blockquote>
+<p>我们常说的“<strong>猫</strong>”，其实叫做<strong>调制解调器</strong>（<code>Modem</code>），作用是进行<strong>信号转换</strong>，因为读音跟“猫”很像，所以我们又叫做“猫”</p>
+</blockquote>
+<p>在以前，人们是通过电话线上网的，所以对电话线进行信号转换的设备，叫“<strong>猫</strong>”。</p>
+<p>到了现在，科技的进步使得我们可以用光纤进行上网，而且速度更快，那么对光纤进行信号转换的设备，叫“<strong>光猫</strong>”。</p>
+</li>
+<li><p>话说回来，正因为每家每户接的线是光纤，传输的是<code>光信号</code>；而我们路由器接收的是<code>数字信号</code>，就没有办法通信，所以就有了<strong>光猫</strong>。</p>
+<p>打个比方：哪一天我们国家主席要是访问俄罗斯，会因为语言不通，身边会带上翻译官。而这个翻译官的作用，是跟光猫的作用一样的。</p>
+<blockquote>
+<p>现在的光猫大多集成了路由器的一些功能，比如WiFi、路由等等，所有它就有两种模式：<code>桥接模式</code>和<code>路由模式</code>。如果舍弃路由器，硬要拿光猫上网也是可以的</p>
+<p><strong>不过作者还是建议您</strong>将它改成<strong>桥接模式</strong>，因为当初发明光猫的作用就是进行信号转换的，仅此而已！</p>
+<p>就像是你出国旅游，随身带了个翻译员，你总不能让他还要给你开车接送，又得拎包推箱，还会端茶递水、捏肩捶腿，甚至远程帮你管理公司事务…</p>
+<p>那自然是开车要司机，吃喝要去餐厅，按摩要去按摩店，辅助公务得要秘书来。翻译就干翻译的事儿，光猫就干光猫的，你让他同时要干其他那么多事儿，他肯定忙不过来对吧。</p>
+</blockquote>
+</li>
+<li><p>这样，我们的设备就可以通过路由器，路由器再通过光猫来上网了！</p>
+</li>
+</ol>
+<h2 id="三、计划"><a href="#三、计划" class="headerlink" title="三、计划"></a>三、计划</h2><p>因为运营商给我们家分配的是公网IP，那么在自己电脑的虚拟机搭建一个网站，把端口映射给主机，然后主机端口映射给路由器，路由器再由光猫桥接到外网。通过这样层层递进的方式，我就可以实现外网通过<strong>IP+端口号</strong>来访问虚拟机的web。</p>
+<h2 id="四、注意事项"><a href="#四、注意事项" class="headerlink" title="四、注意事项"></a>四、注意事项</h2><ol>
+<li><p>光猫改成<strong>桥接模式</strong>！</p>
+</li>
+<li><p>怎么着得有个公网IP吧，不然我怎么通过这个IP来访问呢？</p>
+<p>判断自家有没有公网IP：</p>
+<ul>
+<li><p>步骤一：<a target="_blank" rel="noopener" href="https://zh-hans.ipshu.com/">https://zh-hans.ipshu.com</a></p>
+<p><strong>记住在搜索框下面显示的IP</strong></p>
+</li>
+<li><p>步骤二：登录192.168.0.1，进入自家路由器的后台，找到<strong>WAN口的IP</strong></p>
+<p><strong>记住WAN口的IP</strong></p>
+</li>
+<li><p>将两个IP地址进行比对：</p>
+<p><strong>相同，恭喜你，有了公网IP非常香</strong></p>
+<p><strong>不相同，不要悲伤，不要心急，可以联系运营商给你分配一个公网IP</strong></p>
+</li>
+</ul>
+</li>
+</ol>
+<p>工欲善其事，必先利其器，相信您对自己家的上网方式有了一定的了解，并且也做好了准备工作，那么</p>
+<p>靓仔，下一篇文章，咱儿走着瞧~~~</p>
 
     </div>
 
@@ -333,7 +387,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://www.qmyy.xyz/2023/01/02/hello-world/" title="Hello World">https://www.qmyy.xyz/2023/01/02/hello-world/</a>
+      <a href="https://www.qmyy.xyz/2023/01/12/yong-gong-wang-ip-fang-wen-dian-nao-xu-ni-ji-da-jian-de-web-yi/" title="用公网IP访问电脑虚拟机搭建的web（一）">https://www.qmyy.xyz/2023/01/12/yong-gong-wang-ip-fang-wen-dian-nao-xu-ni-ji-da-jian-de-web-yi/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -341,15 +395,21 @@
 </ul>
 </div>
 
+          <div class="post-tags">
+              <a href="/tags/web/" rel="tag"><i class="fa fa-tag"></i> web</a>
+          </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
+                <a href="/2023/01/04/wo-de-bo-ke-da-jian/" rel="prev" title="我的博客搭建">
+                  <i class="fa fa-chevron-left"></i> 我的博客搭建
+                </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2023/01/04/wo-de-bo-ke-da-jian/" rel="next" title="我的博客搭建">
-                  我的博客搭建 <i class="fa fa-chevron-right"></i>
+                <a href="/2023/01/12/yong-gong-wang-ip-fang-wen-dian-nao-xu-ni-ji-da-jian-de-web-er/" rel="next" title="用公网IP访问电脑虚拟机搭建的web（二）">
+                  用公网IP访问电脑虚拟机搭建的web（二） <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
